@@ -1,0 +1,64 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "EV Route Optimizer API",
+    "version": "1.0.0",
+    "description": "API for planning EV routes and suggesting charging stops."
+  },
+  "servers": [
+    { "url": "http://localhost:3000" }
+  ],
+  "paths": {
+    "/plan-route": {
+      "get": {
+        "summary": "Plan a route and suggest charging stops",
+        "parameters": [
+          {
+            "name": "start",
+            "in": "query",
+            "description": "Start coordinates (lat,lon)",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "description": "End coordinates (lat,lon)",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "battery",
+            "in": "query",
+            "description": "Initial battery percentage",
+            "required": true,
+            "schema": { "type": "number" }
+          },
+          {
+            "name": "range",
+            "in": "query",
+            "description": "Vehicle range in km",
+            "required": true,
+            "schema": { "type": "number" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Route and suggested charging stops",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "route": { "type": "object" },
+                    "stations": { "type": "array", "items": { "type": "object" } }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -4,11 +4,24 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Run Node App",
-    "program": "${workspaceFolder}/index.js",
-    "env": {
-      "PORT": "3000"
+      "name": "Run Node Server",
+      "program": "${workspaceFolder}/server.js",
+      "env": {
+        "PORT": "3000"
+      }
+    },
+    {
+      "type": "firefox",
+      "request": "launch",
+      "name": "Open Local Swagger UI",
+      "url": "http://localhost:3000/api-docs",
+      "webRoot": "${workspaceFolder}"
     }
+  ],
+  "compounds": [
+    {
+      "name": "Server + Swagger UI",
+      "configurations": ["Run Node Server", "Open Local Swagger UI"]
     }
   ]
 }
