@@ -30,7 +30,7 @@ OPENCHARGEMAP_API_KEY=your-openchargemap-api-key
    ```bash
    node server.js
    ```
-3. Access the API docs at: [http://localhost:3000/api-docs](http://localhost:3000/api-docs)
+3. Access the API docs at: [http://localhost:5000/api-docs](http://localhost:5000/api-docs)
 
 ## API Usage
 ### Plan a Route
@@ -43,24 +43,24 @@ OPENCHARGEMAP_API_KEY=your-openchargemap-api-key
 
 Example:
 ```
-curl "http://localhost:3000/plan-route?start=51.5074,-0.1278&end=53.4808,-2.2426&battery=60&range=250"
+curl "http://localhost:5000/plan-route?start=51.5074,-0.1278&end=53.4808,-2.2426&battery=60&range=250"
 ```
 
 ## OpenAPI/Swagger Docs
-- View and test the API at: [http://localhost:3000/api-docs](http://localhost:3000/api-docs)
+- View and test the API at: [http://localhost:5000/api-docs](http://localhost:5000/api-docs)
 
 ## Containerization
 
 ### Build and Run with Podman
 ```bash
 podman build -t ev-route-api .
-podman run --env-file .env -p 3000:3000 ev-route-api
+podman run --env-file .env -p 5000:5000 ev-route-api
 ```
 
 Or with Docker
 ```bash
 docker build -t ev-route-api .
-docker run --env-file .env -p 3000:3000 ev-route-api
+docker run --env-file .env -p 5000:5000 ev-route-api
 ```
 
 ### Build and Run with Podman Compose

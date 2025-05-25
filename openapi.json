@@ -6,7 +6,7 @@
     "description": "API for planning EV routes and suggesting charging stops."
   },
   "servers": [
-    { "url": "http://localhost:3000" }
+    { "url": "http://localhost:5000" }
   ],
   "paths": {
     "/plan-route": {

@@ -7,14 +7,14 @@
       "name": "Run Node Server",
       "program": "${workspaceFolder}/server.js",
       "env": {
-        "PORT": "3000"
+        "PORT": "5000"
       }
     },
     {
       "type": "firefox",
       "request": "launch",
       "name": "Open Local Swagger UI",
-      "url": "http://localhost:3000/api-docs",
+      "url": "http://localhost:5000/api-docs",
       "webRoot": "${workspaceFolder}"
     }
   ],
